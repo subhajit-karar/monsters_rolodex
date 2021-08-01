@@ -2,6 +2,9 @@
 import './App.css';
 import React, {Component} from 'react';
 import {Cardlist} from './components/Cardlist/Cardlist';
+import {SearchBox} from './components/SearchBox/SearchBox';
+
+//Short cart rafc
 
 class App extends Component {
   constructor(){
@@ -24,7 +27,9 @@ class App extends Component {
     )
     return(
     <div className="App">
-      <input type="search" placeholder="Search Monster" onChange={e => this.setState({searchField: e.target.value})}/>
+      <SearchBox 
+      placeholder="Search Monster" 
+      handleOnChange={e => this.setState({searchField: e.target.value})}/>
       <Cardlist monsters={filterMonster} />
     </div>
   );
